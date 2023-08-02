@@ -1,0 +1,155 @@
+1. Minimum and maximum elements in an array
+
+import java.lang.*;
+import java.util.*;
+
+
+public class minmax1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		System.out.print("Enter the number of inputs: \n");
+		int n=s.nextInt();
+		int[] a= new int[n]; 
+		System.out.print("Enter the inputs: \n");
+		int i;
+	    for( i=0;i<n;i++) {
+	    	a[i]=s.nextInt();
+	    }
+      Arrays.sort(a);
+      System.out.println(a[0]);
+      System.out.println(a[n-1]);
+	}
+
+}
+
+2. Check if given number is a palindrome or not.
+
+import java.util.Scanner;
+public class Palnumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num;
+		Scanner s = new Scanner(System.in);
+		num=s.nextInt();
+		int number=num;
+		int rev=0;
+		while(number!=0) {
+			int remainder=number%10;
+			rev=rev*10+remainder;
+			number=number/10;
+		}
+		
+        if(num==rev) {
+        	System.out.print("Palindrome");
+        }
+        else {
+        	System.out.print("Not a palindrome");
+        }
+	}
+
+}
+
+3. Find the number of * or # to be added to an input string consisting of # and * to make it a valid input.
+
+import java.lang.*;
+import java.util.*;
+
+public class Starhash {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int star=0,hash=0;
+		int diff=0;
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter string\n");
+		String str=s.nextLine();
+		for(int i=0;i<str.length();i++) {
+		if(str.charAt(i)=='#') {
+		      hash++;
+		}
+		else if(str.charAt(i)=='*'){
+			star++;
+		}
+		else {
+			return;
+		}
+                }		
+		
+			diff=star-hash;			
+			System.out.printf("%d",diff);
+		
+}}
+
+4. Minimum maximum element 
+
+import java.util.*;
+public class minmaxin10elements {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s = new Scanner(System.in);
+		int size=s.nextInt();
+		int arr[]=new int[size];
+		
+		for(int i=0;i<size;i++) {
+			arr[i]=s.nextInt();
+		}
+		Arrays.sort(arr);
+		System.out.printf("Min:%d Max:%d", arr[0],arr[size-2]);
+
+	}
+
+}
+
+/* alternate way 
+ * min=0,max=0
+ * for(i=0;i<n;i++){
+ * scanf()
+ * if(inp>max){
+ * max=inp;}
+ * if(inp<min){
+ * min=inp;}
+ */
+/* alternate way for second largest and second smallest
+ * min=0,max=0,smin=0,smax=0;
+ * for(i=0;i<n;i++){
+ * scanf()
+ * if(inp>max){
+ * smax=max;
+ * max=inp;}
+ * if(inp<min){
+ * smin=min
+ * min=inp;}
+ */
+
+5. Parking space problem
+
+import java.util.*;
+public class parkingspacematrix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		int sum,inp,psum=0,r;
+		int row=s.nextInt();
+		int col=s.nextInt();
+		
+		
+		for(int i=0;i<row;i++) {
+			sum=0;
+			for(int j=0;j<col;j++) {				
+				inp=s.nextInt();
+				sum+=inp;
+			}
+			if(psum<sum) {
+				r=i;
+				psum=sum;
+			}
+		}
+		System.out.printf("%d", r+1);
+	}
+
+}
